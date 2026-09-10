@@ -1,0 +1,50 @@
+{
+    "name": "stupidbrains/mobile-sfx",
+    "version": "1.0.0",
+    "description": "Low-latency short-sound playback for NativePHP Mobile",
+    "namespace": "Sfx",
+    "platforms": ["android", "ios"],
+    "bridge_functions": [
+        {
+            "name": "Sfx.Preload",
+            "ios": "SfxFunctions.Preload",
+            "android": "com.stupidbrains.sfx.SfxFunctions.Preload",
+            "android_params": ["context"],
+            "description": "Load named clips and prepare them for playback"
+        },
+        {
+            "name": "Sfx.Play",
+            "ios": "SfxFunctions.Play",
+            "android": "com.stupidbrains.sfx.SfxFunctions.Play",
+            "android_params": ["context"],
+            "description": "Play a preloaded clip by name"
+        },
+        {
+            "name": "Sfx.Unload",
+            "ios": "SfxFunctions.Unload",
+            "android": "com.stupidbrains.sfx.SfxFunctions.Unload",
+            "android_params": ["context"],
+            "description": "Release all loaded clips"
+        }
+    ],
+    "android": {
+        "min_version": 21,
+        "permissions": [],
+        "repositories": [],
+        "dependencies": { "implementation": [] },
+        "activities": [],
+        "services": [],
+        "receivers": [],
+        "providers": []
+    },
+    "ios": {
+        "min_version": "15.0",
+        "permissions": [],
+        "repositories": [],
+        "dependencies": { "swift_packages": [], "pods": [] }
+    },
+    "assets": { "android": [], "ios": [] },
+    "secrets": [],
+    "events": [],
+    "service_provider": "StupidBrains\\MobileSfx\\SfxServiceProvider"
+}
